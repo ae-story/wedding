@@ -28,27 +28,36 @@ header {
 header h1 {
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
-  color: #6f3f24; /* deeper warm brown */
+  color: #6f3f24;
   margin-bottom: 0.5rem;
   letter-spacing: 1px;
 }
 
 header p {
   font-size: 1.2rem;
-  color: #b07a50; /* richer accent tone */
+  color: #b07a50;
   margin-bottom: 2rem;
   font-weight: 500;
 }
 
 /* ================================
-   Navigation
+   Navigation (ALWAYS ONE LINE)
 ================================ */
 nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 2.5rem;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+
+  flex-wrap: nowrap;      /* prevent wrapping */
+  white-space: nowrap;    /* keep in single row */
+  overflow-x: auto;       /* scroll if too small */
+  padding-bottom: 5px;
+}
+
+nav ul::-webkit-scrollbar {
+  display: none; /* hides mobile scrollbar */
 }
 
 nav a {
@@ -163,7 +172,7 @@ footer {
   }
 
   nav a {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
   .hero {
@@ -181,22 +190,5 @@ footer {
   .btn {
     padding: 0.7rem 1.4rem;
     font-size: 0.9rem;
-  }
-}
-
-/* Extra small phones */
-@media (max-width: 480px) {
-
-  nav ul {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-
-  nav a {
-    font-size: 1rem;
-  }
-
-  .hero h2 {
-    font-size: 1.7rem;
   }
 }
