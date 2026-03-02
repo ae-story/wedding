@@ -1,39 +1,48 @@
-/* Reset & Base Styles */
+/* ================================
+   Reset & Base Styles
+================================ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
 }
 
 body {
-  background-color: #fdfaf6;
-  color: #333;
-  line-height: 1.6;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to bottom, #fdfaf6, #f3ece4);
+  color: #2f2f2f;
+  line-height: 1.7;
 }
 
-/* Header */
+/* ================================
+   Header
+================================ */
 header {
   text-align: center;
-  padding: 2.5rem 1rem;
-  background-color: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  border-bottom: 1px solid #f0e6dc;
+  padding: 3rem 1rem 2rem;
+  background: linear-gradient(to bottom, #ffffff, #f9f4ee);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  border-bottom: 1px solid #e8dfd6;
 }
 
 header h1 {
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
-  color: #8b5e3c;
+  color: #6f3f24; /* deeper warm brown */
   margin-bottom: 0.5rem;
+  letter-spacing: 1px;
 }
 
 header p {
-  font-size: 1.25rem;
-  color: #a67c52;
-  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  color: #b07a50; /* richer accent tone */
+  margin-bottom: 2rem;
+  font-weight: 500;
 }
 
+/* ================================
+   Navigation
+================================ */
 nav ul {
   list-style: none;
   display: flex;
@@ -44,91 +53,121 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: #8b5e3c;
-  font-weight: 500;
-  font-size: 1.1rem;
+  color: #6f3f24;
+  font-weight: 600;
+  font-size: 1.05rem;
   position: relative;
-  transition: color 0.3s;
+  padding-bottom: 4px;
+  transition: all 0.3s ease;
 }
 
 nav a::after {
   content: '';
-  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 0;
   height: 2px;
-  background: #d4a373;
-  transition: width 0.3s;
-  position: absolute;
-  bottom: -5px;
-  left: 0;
+  background: #d89b6d;
+  transition: width 0.3s ease;
 }
 
 nav a:hover {
-  color: #d4a373;
+  color: #d89b6d;
 }
 
 nav a:hover::after {
   width: 100%;
 }
 
-/* Hero Section */
+/* ================================
+   Hero Section
+================================ */
 .hero {
-  padding: 5rem 1rem;
+  padding: 6rem 1.5rem;
   text-align: center;
-  background: linear-gradient(to bottom, #fdfaf6, #fef5e6);
+  background: linear-gradient(to bottom, #fdfaf6, #efe4d8);
 }
 
 .hero h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #5a3e2b;
+  font-size: 2.7rem;
+  margin-bottom: 1.5rem;
+  color: #4e2c1b;
   letter-spacing: 1px;
 }
 
 .hero p {
-  font-size: 1.1rem;
-  color: #555;
-  max-width: 600px;
+  font-size: 1.15rem;
+  color: #444;
+  max-width: 650px;
   margin: auto;
-  line-height: 1.8;
+  line-height: 1.9;
 }
 
-/* Buttons (optional for future) */
+/* ================================
+   Buttons
+================================ */
 .btn {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: #d4a373;
+  margin-top: 2rem;
+  padding: 0.85rem 1.8rem;
+  background: linear-gradient(to right, #d89b6d, #b87447);
   color: #fff;
   border-radius: 50px;
   text-decoration: none;
-  font-weight: 500;
-  transition: background 0.3s, transform 0.3s;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 6px 14px rgba(184, 116, 71, 0.3);
+  transition: all 0.3s ease;
 }
 
 .btn:hover {
-  background-color: #b87c52;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(184, 116, 71, 0.4);
 }
 
-/* Footer */
+/* ================================
+   Footer
+================================ */
 footer {
   text-align: center;
   padding: 2rem 1rem;
-  background-color: #fff;
-  color: #a67c52;
-  border-top: 1px solid #f0e6dc;
+  background: #fff;
+  color: #9c6a44;
+  border-top: 1px solid #e8dfd6;
   font-size: 0.95rem;
+  margin-top: 3rem;
 }
 
-/* Responsive Typography */
+/* ================================
+   Mobile Optimization
+================================ */
 @media (max-width: 768px) {
+
+  header {
+    padding: 2rem 1rem 1.5rem;
+  }
+
   header h1 {
-    font-size: 2.25rem;
+    font-size: 2.2rem;
   }
 
   header p {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  nav ul {
+    gap: 1.2rem;
+  }
+
+  nav a {
+    font-size: 0.95rem;
+  }
+
+  .hero {
+    padding: 4rem 1.2rem;
   }
 
   .hero h2 {
@@ -137,5 +176,27 @@ footer {
 
   .hero p {
     font-size: 1rem;
+  }
+
+  .btn {
+    padding: 0.7rem 1.4rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  nav a {
+    font-size: 1rem;
+  }
+
+  .hero h2 {
+    font-size: 1.7rem;
   }
 }
